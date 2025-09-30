@@ -1,0 +1,30 @@
+name: Commit CI
+
+on:
+  push:
+    branches: 
+      - main
+      - feat-ci
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Trocar para branch específica
+        run: git checkout main   # ou a branch que você precisa
+
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Instalar dependências e compilar
+        run: mvn clean compile
+
+      - name: Rodar testes
+        run: mvn test
