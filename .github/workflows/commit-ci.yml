@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Trocar para branch específica
-        run: git checkout main   # ou a branch que você precisa
+        run: git checkout feat-ci   # ou a branch que você precisa
 
       - name: Configurar JDK 17
         uses: actions/setup-java@v3
