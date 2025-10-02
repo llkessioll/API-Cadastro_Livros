@@ -18,8 +18,9 @@ public class Livro {
 	private String autor;
 	private String dataLancamento;
 	
-	public Livro(Long isbn, String titulo, String autor, String dataLancameto) {
-		this.isbn = isbn;
+	public Livro() {}
+	
+	public Livro(String titulo, String autor, String dataLancameto) {
 		this.titulo = titulo;
 		this.autor = autor;
 		this.dataLancamento = dataLancameto;
